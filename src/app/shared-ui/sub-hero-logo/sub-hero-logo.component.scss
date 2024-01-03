@@ -1,0 +1,35 @@
+.hero-message {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: -40px;
+  padding: 0 20px;
+}
+
+.hero-message .logo {
+  align-items: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.hero-message .title {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  text-align: center;
+  margin: 0 0 18px 0;
+  padding: 0;
+  text-transform: none;
+}
+
+.hero-message .sub-title {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 18px 0;
+  padding: 0;
+}

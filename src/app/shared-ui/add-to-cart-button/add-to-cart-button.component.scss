@@ -1,0 +1,27 @@
+.add-to-cart {
+  width: 100%;
+  display: flex;
+  button {
+    padding: 10px;
+    min-width: 44px;
+    min-height: 44px;
+    font-size: var(--element-text);
+    background-color: var(--background-dark-blue);
+    &:hover,
+    &:focus {
+      background-color: var(--background-dark-blue-hover);
+      filter: drop-shadow(0 0 4px var(--drop-shadow));
+      font-weight: var(--semi-bold-text)
+    }
+    &:first-of-type {
+      border-radius: var(--border-radius) 0 0 var(--border-radius);
+    }
+    &:nth-of-type(2) {
+      flex-grow: 1;
+      z-index: 5;
+    }
+    &:last-of-type {
+      border-radius: 0 var(--border-radius) var(--border-radius)0;
+    }
+  }
+}

@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Work Sans", sans-serif; }
+
+body {
+  font-size: 16px;
+  margin: 0 auto;
+  width: auto;
+}
+
+body,
+section,
+.main-content {
+  background-color: rgba(232, 249, 253, 1);
+}
+
+.main-content {
+  max-width: 1500px;
+  margin: 0 auto;
+  min-width: 480px;
+  padding: 0 20px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--font-color);
+}

@@ -1,0 +1,15 @@
+<div class="side-nav">
+  @for(product of products(); track product.id) {
+    <div
+      [routerLink]="['./']"
+      [queryParams]="{
+        productId: product.id
+      }"
+      class="image-button"
+    >
+      <img
+        [src]="product.thumb"
+      />
+    </div>
+  }
+</div>

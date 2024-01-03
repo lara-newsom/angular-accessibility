@@ -1,0 +1,9 @@
+<section>
+  <div class="sub-section">
+    @for(product of featured(); track product.id) {
+      <app-card
+        [product]="product"
+      ></app-card>
+    }
+  </div>
+</section>

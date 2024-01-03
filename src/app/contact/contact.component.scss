@@ -1,0 +1,115 @@
+/* START - delete styles between these comments */
+.main-content{
+  margin-top: 20px;
+  background-color: var(--background-light-blue);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.contact-wrapper {
+  flex-grow: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.image-wrapper {
+  margin-right: 5%;
+}
+/* END - delete styles between these comments */
+
+img{
+  width: 100%;
+}
+
+.form-wrapper-spinner {
+  width: 55%;
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+div.column-wrapper {
+  align-items: left;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+div.column-wrapper div {
+  width: 48%;
+}
+
+h3 {
+  color: rgba(54, 48, 44, 1);
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 18px 0;
+  line-height: 1.7rem;
+}
+
+p {
+  color: rgba(54, 48, 44, 1);
+  font-size: 1.2rem;
+  margin: 0 0 58px 0;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+}
+
+label {
+  color: rgba(54, 48, 44, 1);
+  display: block;
+  font-weight: 600;
+  margin-bottom: 11px;
+  text-transform: uppercase;
+}
+
+input:not([type="submit"]) {
+  background-color: white;
+  border: 1px solid rgba(54, 48, 44, 0.3);
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: block;
+  font-size: 1.2rem;
+  height: 54px;
+  padding: 0 10px;
+  width: 100%;
+}
+
+textarea {
+  border: 1px solid rgba(54, 48, 44, 0.3);
+  box-sizing: border-box;
+  border-radius: 6px;
+  display: block;
+  height: 147px;
+  padding: 10px;
+  width: 100%;
+}
+
+input[type=submit],
+button {
+  border: 0;
+  color: rgba(54, 48, 44, 1);
+  font-size: 16px;
+  height: 51px;
+  text-transform: uppercase;
+  width: 219px;
+}
+
+input.ng-invalid.ng-touched:not(form),
+textarea.ng-invalid.ng-touched:not(form) {
+  border-left: 10px solid red;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+

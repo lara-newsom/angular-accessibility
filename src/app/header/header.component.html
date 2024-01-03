@@ -1,0 +1,39 @@
+<header class="site-header">
+  <h1>
+    <button
+      [routerLink]="['/' + ROUTE_TOKENS.home]"
+    ><img [src]="logoUrl" /></button>
+  </h1>
+  <div class="wrap-collabsible">
+    <input
+      #products
+      id="collapsible"
+      class="toggle"
+      type="checkbox"
+    >
+    <label for="collapsible"
+      class="lbl-toggle">Products</label>
+    <div
+      class="collapsible-content"
+      (mouseleave)="closeMenu()"
+    >
+      <div class="content-inner">
+        <div>
+          @for(link of LINKS; track $index){
+            <div>
+              <div
+                class="button"
+                [routerLink]="['/' + ROUTE_TOKENS.products, link.category]"
+                (click)="selectCategory(link.category)"
+              >{{ link.description }}</div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    [routerLink]="[ '/' + ROUTE_TOKENS.contact]"
+    class="menu-option">Contact
+  </div>
+</header>

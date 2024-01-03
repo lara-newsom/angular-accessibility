@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-accessibility": {
+    "accessibility-course": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/angular-accessibility",
+            "outputPath": "dist/accessibility-course",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -62,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "angular-accessibility:build:production"
+              "buildTarget": "accessibility-course:build:production"
             },
             "development": {
-              "buildTarget": "angular-accessibility:build:development"
+              "buildTarget": "accessibility-course:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +73,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "angular-accessibility:build"
+            "buildTarget": "accessibility-course:build"
           }
         },
         "test": {

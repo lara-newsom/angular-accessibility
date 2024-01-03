@@ -1,0 +1,28 @@
+@if (selectedProduct()){
+  <div
+    class="detail"
+  >
+    <h3>{{ selectedProduct().title }}</h3>
+    <div class="image-wrapper">
+      <div class="product-image">
+        <img
+          [src]="selectedProduct().image"
+          [alt]="selectedProduct().title"
+        />
+      </div>
+      <div class="description">
+        <p>{{ selectedProduct().description }}</p>
+        <h4>Tags:
+          @for (tag of selectedProduct().tags; track $index) {
+            <span
+              class="tag"
+            >{{ tag }}</span>
+          }
+        </h4>
+        <p class="price">Price: <span>{{ selectedProduct().price | currency }}</span></p>
+      </div>
+    </div>
+  </div>
+} @else {
+  <h3>Please Select a Product</h3>
+}
