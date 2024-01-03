@@ -23,7 +23,7 @@
           <div>Order# 1664</div>
         </div>
         <div class="totals-details-wrapper">
-          <button appJlpBorderButton input="submit" (click)="returnToProducts()">Keep Shopping</button>
+          <button input="submit" (click)="returnToProducts()">Keep Shopping</button>
         </div>
       </div>
     } @else {
@@ -75,7 +75,6 @@
             <div>Processing...</div>
           } @else {
             <button
-              appJlpBorderButton
               input="submit"
               (click)="checkout()"
               [disabled]="cartService.subtotal() === 0"
