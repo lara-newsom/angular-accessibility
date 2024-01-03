@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { LINKS } from '../models/category';
 import { ROUTE_TOKENS } from '../models/route-tokens';
 import { RouterLink } from '@angular/router';
@@ -13,20 +13,20 @@ import { RouterLink } from '@angular/router';
   ]
 })
 export class HeaderComponent {
-  @ViewChild('products') products!: ElementRef;
+  showMenu = false;
   readonly LINKS = LINKS;
   readonly ROUTE_TOKENS = ROUTE_TOKENS;
 
   readonly menuItemOne = 'Menu Item One';
   readonly logoUrl = '../../assets/images/justlikepeople.png';
 
-  closeMenu(){
-    this.products.nativeElement.checked = false;
+  toggleMenu(){
+    this.showMenu = !this.showMenu;
     console.log('menu was closed!');
   }
 
   selectCategory(name: string){
-    this.products.nativeElement.checked = false;
+    this.showMenu = false;
     console.log(name, ' was clicked!');
   }
 }

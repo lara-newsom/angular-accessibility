@@ -1,40 +1,57 @@
 <header class="site-header">
-  <h1>
-    <button
-      [routerLink]="['/' + ROUTE_TOKENS.home]"
-    ><img [src]="logoUrl" /></button>
-  </h1>
-  <div class="wrap-collabsible">
-    <input
-      #products
-      id="collapsible"
-      class="toggle"
-      type="checkbox"
-    >
-    <label for="collapsible"
-      class="lbl-toggle">Products</label>
-    <div
-      class="collapsible-content"
-      (mouseleave)="closeMenu()"
-    >
-      <div class="content-inner">
-        <div>
-          @for(link of LINKS; track $index){
-            <div>
-              <div
-                class="button"
-                [routerLink]="['/' + ROUTE_TOKENS.products, link.category]"
-                [queryParams]="{ productId: link.firstProduct }"
-                (click)="selectCategory(link.category)"
-              >{{ link.description }}</div>
-            </div>
+  <a
+    class="home-logo"
+    [routerLink]="['/' + ROUTE_TOKENS.home]"
+  ><img
+    alt="Home - Just like people pet boutique"
+    [src]="logoUrl"
+  /></a>
+  <nav>
+    <ul>
+      <li>
+        <a
+          [routerLink]="[ '/' + ROUTE_TOKENS.home]"
+          class="menu-option"
+        >Home</a>
+      </li>
+      <li>
+        <button
+          role="link"
+          (click)="toggleMenu()"
+          (keydown.escape)="selectCategory('none')"
+          class="menu-option"
+        >Products
+          <span
+            [class.rotated-arrow-icon]="showMenu"
+            class="arrow-icon"
+          ></span></button>
+        <ul
+          [class.show-submenu]="showMenu"
+          class="collapsible-content"
+        >
+          @if(showMenu) {
+            @for(link of LINKS; track link.category){
+              <li class="content-inner">
+                <a
+                  class="link"
+                  [routerLink]="['/' + ROUTE_TOKENS.products, link.category]"
+                  [queryParams]="{ productId: link.firstProduct }"
+                  (click)="selectCategory(link.category)"
+                  (keydown.escape)="selectCategory('none')"
+                >
+                  {{ link.description }}
+                </a>
+              </li>
+            }
           }
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    [routerLink]="[ '/' + ROUTE_TOKENS.contact]"
-    class="menu-option">Contact
-  </div>
+        </ul>
+      </li>
+      <li>
+        <a
+          [routerLink]="[ '/' + ROUTE_TOKENS.contact]"
+          class="menu-option"
+        >Contact</a>
+      </li>
+    </ul>
+  </nav>
 </header>
