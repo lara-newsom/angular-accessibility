@@ -5,11 +5,9 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  overflow-y: auto;
   max-height: 620px;
   // delete above
   ul {
-    list-style-type: none;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
