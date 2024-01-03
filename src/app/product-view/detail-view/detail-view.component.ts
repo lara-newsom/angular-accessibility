@@ -1,6 +1,6 @@
 import { Component, Input, inject } from '@angular/core';
 import { ProductService } from '../../services/product.service';
-import { CurrencyPipe } from '@angular/common';
+import { CurrencyPipe, NgFor, NgIf } from '@angular/common';
 
 @Component({
   standalone: true,
@@ -8,6 +8,8 @@ import { CurrencyPipe } from '@angular/common';
   templateUrl: './detail-view.component.html',
   styleUrls: ['./detail-view.component.scss'],
   imports: [
+    NgFor,
+    NgIf,
     CurrencyPipe,
   ]
 })

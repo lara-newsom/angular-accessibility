@@ -18,7 +18,7 @@ export class ProductViewComponent{
     this.productService.selectedCategory.set(val);
   }
 
-  private readonly productService = inject(ProductService);
+  protected readonly productService = inject(ProductService);
 }
 
 
