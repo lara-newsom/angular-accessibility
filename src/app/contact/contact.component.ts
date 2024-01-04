@@ -6,6 +6,7 @@ import { ReplaySubject } from 'rxjs';
 import { FormsModule } from '@angular/forms';
 import { JlpBorderButtonDirective } from '../shared-ui/jlp-border-button.directive';
 import { TwoPanelLayoutComponent } from '../shared-ui/two-panel-layout/two-panel-layout.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   standalone: true,
@@ -13,6 +14,7 @@ import { TwoPanelLayoutComponent } from '../shared-ui/two-panel-layout/two-panel
     FormsModule,
     JlpBorderButtonDirective,
     TwoPanelLayoutComponent,
+    MatProgressSpinnerModule,
   ],
   selector: 'app-contact',
   templateUrl: './contact.component.html',

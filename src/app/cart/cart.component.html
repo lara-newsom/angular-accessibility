@@ -62,6 +62,7 @@
         </div>
         <div class="totals-details-wrapper" aria-live="assertive">
           @if(loading) {
+            <mat-spinner aria-label="Order Checkout"></mat-spinner>
             <div>Processing...</div>
           } @else {
             <button
