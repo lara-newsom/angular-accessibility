@@ -3,12 +3,14 @@ import { Component, Input } from '@angular/core';
 import { Product } from '../../models/product';
 import { RouterLink } from '@angular/router';
 import { ROUTE_TOKENS } from '../../models/route-tokens';
+import { AddToCartButtonComponent } from '../add-to-cart-button/add-to-cart-button.component';
 
 @Component({
   standalone: true,
   imports: [
     CurrencyPipe,
-    RouterLink
+    RouterLink,
+    AddToCartButtonComponent,
   ],
   selector: 'app-card',
   templateUrl: './card.component.html',

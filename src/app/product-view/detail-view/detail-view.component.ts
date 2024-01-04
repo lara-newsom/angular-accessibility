@@ -1,6 +1,8 @@
 import { Component, Input, inject } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { CurrencyPipe } from '@angular/common';
+import { CartService } from '../../services/cart.service';
+import { AddToCartButtonComponent } from '../../shared-ui/add-to-cart-button/add-to-cart-button.component';
 
 @Component({
   standalone: true,
@@ -9,6 +11,7 @@ import { CurrencyPipe } from '@angular/common';
   styleUrls: ['./detail-view.component.scss'],
   imports: [
     CurrencyPipe,
+    AddToCartButtonComponent,
   ]
 })
 export class DetailViewComponent {
@@ -16,6 +19,7 @@ export class DetailViewComponent {
     this.productService.selectedProductId.set(val);
   }
   private readonly productService = inject(ProductService);
+  protected readonly cartService = inject(CartService);
 
   readonly selectedProduct = this.productService.selectedProduct;
 }

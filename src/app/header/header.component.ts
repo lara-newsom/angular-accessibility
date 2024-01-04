@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { LINKS } from '../models/category';
 import { ROUTE_TOKENS } from '../models/route-tokens';
 import { RouterLink } from '@angular/router';
+import { CartService } from '../services/cart.service';
 
 @Component({
   standalone: true,
@@ -13,6 +14,7 @@ import { RouterLink } from '@angular/router';
   ]
 })
 export class HeaderComponent {
+  protected readonly cartService = inject(CartService);
   showMenu = false;
   readonly LINKS = LINKS;
   readonly ROUTE_TOKENS = ROUTE_TOKENS;

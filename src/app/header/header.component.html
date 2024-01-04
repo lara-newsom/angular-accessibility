@@ -55,6 +55,14 @@
           class="menu-option"
         >Contact</a>
       </li>
+      <li>
+        <a
+          [routerLink]="[ '/' + ROUTE_TOKENS.cart]"
+          queryParamsHandling="merge"
+          class="menu-option"
+        ><span class="total-items">{{ cartService.totalItems() }}</span>
+        <img src="../../assets/images/cart-icon.png" alt="Shopping Cart" /></a>
+      </li>
     </ul>
   </nav>
 </header>
