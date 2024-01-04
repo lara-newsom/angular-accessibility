@@ -4,11 +4,13 @@ import { ContactService } from '../services/contact.service';
 import { takeUntil, tap } from 'rxjs/operators';
 import { ReplaySubject } from 'rxjs';
 import { FormsModule } from '@angular/forms';
+import { JlpBorderButtonDirective } from '../shared-ui/jlp-border-button.directive';
 
 @Component({
   standalone: true,
   imports: [
     FormsModule,
+    JlpBorderButtonDirective,
   ],
   selector: 'app-contact',
   templateUrl: './contact.component.html',

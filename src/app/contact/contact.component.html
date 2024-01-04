@@ -76,6 +76,7 @@
           </div>
 
           <button
+            appJlpBorderButton
             [disabled]="contactForm.invalid"
             type="submit"
             name="submit"
@@ -90,7 +91,7 @@
     <div class="form-wrapper">
       <h3>Thank You for Your Message</h3>
       <p>It may take up to 24 hours for someone to respond.</p>
-      <button (click)="clearForm()">Send Another</button>
+      <button appJlpBorderButton (click)="clearForm()">Send Another</button>
     </div>
     } @else {
     <div class="form-wrapper-spinner">

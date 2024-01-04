@@ -93,16 +93,6 @@ textarea {
   width: 100%;
 }
 
-input[type=submit],
-button {
-  border: 0;
-  color: var(--font-color);
-  font-size: var(--element-text);
-  height: 51px;
-  text-transform: uppercase;
-  width: 219px;
-}
-
 input.ng-invalid.ng-touched:not(form),
 textarea.ng-invalid.ng-touched:not(form) {
   border-left: 10px solid red;

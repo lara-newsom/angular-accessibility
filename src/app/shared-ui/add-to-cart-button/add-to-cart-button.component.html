@@ -1,15 +1,18 @@
 <div class="add-to-cart">
   <button
+    appJlpButton
     aria-label="Remove one from cart"
     (click)="cartService.decrementCartItem(_productId())"
   >-</button>
   <button
+    appJlpButton
     [attr.aria-label]="addToCartMessage()"
     (click)="cartService.addCartItem(_productId())"
   >
     <span aria-live="assertive">{{ buttonMessage() }}</span>
   </button>
   <button
+    appJlpButton
     aria-label="Add one to cart"
     (click)="cartService.addCartItem(_productId())"
   >+</button>
