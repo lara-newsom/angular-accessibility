@@ -37,6 +37,6 @@
 .router-link-active img {
   width: 94%;
   height: 94%;
-  border: solid var(--border-width) white;
+  border: solid var(--border-width) var(--white);
   filter: drop-shadow(0 0 8px var(--drop-shadow));
 }
