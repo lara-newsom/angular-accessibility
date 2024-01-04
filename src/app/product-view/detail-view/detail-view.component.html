@@ -14,7 +14,9 @@
         <h4
           [attr.aria-label]="'Product Tags: ' + selectedProduct().tags"
         >
-          <p>Tags:
+          <p
+            aria-hidden="true"
+          >Tags:
             @for (tag of selectedProduct().tags; track $index) {
               <span
                 class="tag"
