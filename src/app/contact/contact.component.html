@@ -1,18 +1,13 @@
-<section
-  aria-label="Contact Us Form"
-  class="main-content"
+<app-two-panel-layout
+  ariaLabel="Contact Us Form"
+  ariaLiveSetting="assertive"
 >
-  <h2 class="visually-hidden">Contact Us Form</h2>
-  <div class="image-wrapper">
-    <img
-      src="../../assets/images/contact.jpg"
-      alt=""
-    />
-  </div>
-  <div
-    class="contact-wrapper"
-    aria-live="assertive"
-  >
+  <img
+    left-wrapper
+    src="../../assets/images/contact.jpg"
+    alt=""
+  />
+  <div right-wrapper>
     @if(!submitted) {
     <div class="form-wrapper">
       <h3>We'd Love to Hear from You</h3>
@@ -99,4 +94,4 @@
     </div>
     }
   </div>
-</section>
+</app-two-panel-layout>

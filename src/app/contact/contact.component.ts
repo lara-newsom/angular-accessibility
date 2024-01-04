@@ -5,12 +5,14 @@ import { takeUntil, tap } from 'rxjs/operators';
 import { ReplaySubject } from 'rxjs';
 import { FormsModule } from '@angular/forms';
 import { JlpBorderButtonDirective } from '../shared-ui/jlp-border-button.directive';
+import { TwoPanelLayoutComponent } from '../shared-ui/two-panel-layout/two-panel-layout.component';
 
 @Component({
   standalone: true,
   imports: [
     FormsModule,
     JlpBorderButtonDirective,
+    TwoPanelLayoutComponent,
   ],
   selector: 'app-contact',
   templateUrl: './contact.component.html',

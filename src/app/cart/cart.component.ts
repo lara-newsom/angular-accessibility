@@ -9,7 +9,7 @@ import { ROUTE_TOKENS } from '../models/route-tokens';
 import { CartService } from '../services/cart.service';
 import { AddToCartButtonComponent } from '../shared-ui/add-to-cart-button/add-to-cart-button.component';
 import { JlpBorderButtonDirective } from '../shared-ui/jlp-border-button.directive';
-
+import { TwoPanelLayoutComponent } from '../shared-ui/two-panel-layout/two-panel-layout.component';
 
 @Component({
   selector: 'app-cart',
@@ -21,6 +21,7 @@ import { JlpBorderButtonDirective } from '../shared-ui/jlp-border-button.directi
     RouterLink,
     AddToCartButtonComponent,
     JlpBorderButtonDirective,
+    TwoPanelLayoutComponent,
   ],
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']

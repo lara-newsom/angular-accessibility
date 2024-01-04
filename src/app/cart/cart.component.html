@@ -1,18 +1,13 @@
-<section
-  aria-label="Cart Checkout"
-  class="main-content"
+<app-two-panel-layout
+  ariaLabel="Cart Checkout"
+  ariaLiveSetting="assertive"
 >
-  <h2 class="visually-hidden">Cart Checkout</h2>
-  <div class="image-wrapper">
-    <img
-      src="../../assets/images/checkout.jpg"
-      alt=""
-    />
-  </div>
-  <div
-    class="cart-wrapper"
-    aria-live="assertive"
-  >
+  <img
+    left-wrapper
+    src="../../assets/images/checkout.jpg"
+    alt=""
+  />
+  <div right-wrapper>
     <h3 class="cart-header">Just Like People Shopping Cart</h3>
     @if(submitted && !loading) {
       <div class="totals-item">
@@ -80,4 +75,4 @@
       </div>
     }
   </div>
-</section>
+</app-two-panel-layout>
