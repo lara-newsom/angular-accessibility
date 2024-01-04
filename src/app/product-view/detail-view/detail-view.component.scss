@@ -7,17 +7,17 @@
 
 .detail h3 {
   text-align: left;
-  color: rgba(54, 48, 44, 1);
-  font-size: 36px;
-  font-weight: 800;
+  color: var(--font-color);
+  font-size: var(--header-text);
+  font-weight: var(--bold-text);
   margin: 0 0 30px 0;
   line-height: 38px;
 }
 
 .detail button {
-  color: rgba(54, 48, 44, 1);
-  font-size: 1.2rem;
-  font-weight: 500;
+  color: var(--font-color);
+  font-size: var(--body-text);
+  font-weight: var(--semi-bold-text);
   padding: 10px 20px;
   max-width: 500px;
   margin-top: 20px;
@@ -54,13 +54,13 @@
 }
 
 .description p {
-  font-weight: 400;
+  font-weight: var(--regular-text);
   line-height: 1.8rem;
-  font-size: 1.2rem;
+  font-size: var(--body-text);
 }
 
 .tag {
-  font-weight: 200;
+  font-weight: var(--light-text);
   display: inline;
 }
 
@@ -72,6 +72,6 @@
 }
 
 .description p.price {
-  font-size: 1.4rem;
-  font-weight: 700;
+  font-size: var(--highlighted-text);
+  font-weight: var(--bold-text);
 }
