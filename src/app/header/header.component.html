@@ -24,6 +24,7 @@
               <div
                 class="button"
                 [routerLink]="['/' + ROUTE_TOKENS.products, link.category]"
+                [queryParams]="{ productId: link.firstProduct }"
                 (click)="selectCategory(link.category)"
               >{{ link.description }}</div>
             </div>
