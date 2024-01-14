@@ -97,6 +97,15 @@ nav {
   overflow: visible;
 }
 
+.selected-item {
+  border-bottom: solid var(--border-width) var(--white);
+}
+
+.collapsible-content li.content-inner.selected-sub-item {
+  background-color: var(--background-dark-brown);
+  font-weight: var(--bold-text);
+}
+
 @media (max-width: 910px) {
   .site-header {
     justify-content: start;

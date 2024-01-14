@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { LINKS } from '../models/category';
 import { ROUTE_TOKENS } from '../models/route-tokens';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { CartService } from '../services/cart.service';
 
 @Component({
@@ -11,6 +11,7 @@ import { CartService } from '../services/cart.service';
   styleUrls: ['./header.component.scss'],
   imports: [
     RouterLink,
+    RouterLinkActive,
   ]
 })
 export class HeaderComponent {

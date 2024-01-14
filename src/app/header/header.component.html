@@ -13,10 +13,14 @@
       <li>
         <a
           [routerLink]="[ '/' + ROUTE_TOKENS.home]"
+          routerLinkActive="selected-item"
+          ariaCurrentWhenActive="page"
           class="menu-option"
         >Home</a>
       </li>
-      <li>
+      <li
+        routerLinkActive="selected-item"
+      >
         <button
           role="link"
           (click)="toggleMenu()"
@@ -34,7 +38,11 @@
         >
           @if(showMenu) {
             @for(link of LINKS; track link.category){
-              <li class="content-inner">
+              <li
+                class="content-inner"
+                routerLinkActive="selected-sub-item"
+                ariaCurrentWhenActive="page"
+              >
                 <a
                   class="link"
                   [routerLink]="['/' + ROUTE_TOKENS.products, link.category]"
@@ -46,18 +54,24 @@
                 </a>
               </li>
             }
+          } @else {
+            <li [routerLink]="['/' + ROUTE_TOKENS.products]" tabindex="-1"></li>
           }
         </ul>
       </li>
       <li>
         <a
           [routerLink]="[ '/' + ROUTE_TOKENS.contact]"
+          routerLinkActive="selected-item"
+          ariaCurrentWhenActive="page"
           class="menu-option"
         >Contact</a>
       </li>
       <li>
         <a
           [routerLink]="[ '/' + ROUTE_TOKENS.cart]"
+          routerLinkActive="selected-item"
+          ariaCurrentWhenActive="page"
           queryParamsHandling="merge"
           class="menu-option"
         ><span class="total-items">{{ cartService.totalItems() }}</span>
