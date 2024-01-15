@@ -1,21 +1,22 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { render } from '@testing-library/angular';
 import { ProductViewComponent } from './product-view.component';
+import { provideRouter } from '@angular/router';
 
 describe('ProductViewComponent', () => {
-  let component: ProductViewComponent;
-  let fixture: ComponentFixture<ProductViewComponent>;
+  async function setup() {
+    const { fixture } = await render(ProductViewComponent, {
+      providers: [
+        provideRouter([]),
+      ],
+    })
+    return {
+      fixture,
+    };
+  }
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [ProductViewComponent]
-    });
-    fixture = TestBed.createComponent(ProductViewComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  it('should create', async() => {
+    const { fixture } = await setup();
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(fixture).toBeTruthy();
   });
 });

@@ -1,21 +1,19 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { render } from '@testing-library/angular';
 
 import { DetailViewComponent } from './detail-view.component';
 
 describe('DetailViewComponent', () => {
-  let component: DetailViewComponent;
-  let fixture: ComponentFixture<DetailViewComponent>;
+  async function setup() {
+    const { fixture } = await render(DetailViewComponent, {
+    })
+    return {
+      fixture,
+    };
+  }
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [DetailViewComponent]
-    });
-    fixture = TestBed.createComponent(DetailViewComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  it('should create', async() => {
+    const { fixture } = await setup();
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(fixture).toBeTruthy();
   });
 });

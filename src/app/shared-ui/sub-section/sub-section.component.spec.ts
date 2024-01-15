@@ -1,21 +1,22 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { render } from '@testing-library/angular';
 import { SubSectionComponent } from './sub-section.component';
+import { provideRouter } from '@angular/router';
 
 describe('SubSectionComponent', () => {
-  let component: SubSectionComponent;
-  let fixture: ComponentFixture<SubSectionComponent>;
+  async function setup() {
+    const { fixture } = await render(SubSectionComponent, {
+      providers: [
+        provideRouter([]),
+      ],
+    })
+    return {
+      fixture,
+    };
+  }
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [SubSectionComponent]
-    });
-    fixture = TestBed.createComponent(SubSectionComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  it('should create', async() => {
+    const { fixture } = await setup();
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(fixture).toBeTruthy();
   });
 });

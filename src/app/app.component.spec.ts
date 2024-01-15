@@ -1,16 +1,22 @@
-import { TestBed } from '@angular/core/testing';
+import { render } from '@testing-library/angular';
 import { AppComponent } from './app.component';
+import { provideRouter } from '@angular/router';
 
 describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [AppComponent],
-    }).compileComponents();
-  });
+  async function setup() {
+    const { fixture } = await render(AppComponent, {
+      providers: [
+        provideRouter([]),
+      ],
+    })
+    return {
+      fixture,
+    };
+  }
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+  it('should create', async() => {
+    const { fixture } = await setup();
+
+    expect(fixture).toBeTruthy();
   });
 });

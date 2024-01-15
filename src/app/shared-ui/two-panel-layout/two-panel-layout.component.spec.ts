@@ -1,23 +1,18 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { render } from '@testing-library/angular';
 import { TwoPanelLayoutComponent } from './two-panel-layout.component';
 
 describe('TwoPanelLayoutComponent', () => {
-  let component: TwoPanelLayoutComponent;
-  let fixture: ComponentFixture<TwoPanelLayoutComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [TwoPanelLayoutComponent]
+  async function setup() {
+    const { fixture } = await render(TwoPanelLayoutComponent, {
     })
-    .compileComponents();
-    
-    fixture = TestBed.createComponent(TwoPanelLayoutComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    return {
+      fixture,
+    };
+  }
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create', async() => {
+    const { fixture } = await setup();
+
+    expect(fixture).toBeTruthy();
   });
 });

@@ -1,21 +1,22 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { render } from '@testing-library/angular';
 import { HomeComponent } from './home.component';
+import { provideRouter } from '@angular/router';
 
 describe('HomeComponent', () => {
-  let component: HomeComponent;
-  let fixture: ComponentFixture<HomeComponent>;
+  async function setup() {
+    const { fixture } = await render(HomeComponent, {
+      providers: [
+        provideRouter([]),
+      ],
+    })
+    return {
+      fixture,
+    };
+  }
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [HomeComponent]
-    });
-    fixture = TestBed.createComponent(HomeComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  it('should create', async() => {
+    const { fixture } = await setup();
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(fixture).toBeTruthy();
   });
 });

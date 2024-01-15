@@ -1,23 +1,18 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { render } from '@testing-library/angular';
 import { AddToCartButtonComponent } from './add-to-cart-button.component';
 
 describe('AddToCartButtonComponent', () => {
-  let component: AddToCartButtonComponent;
-  let fixture: ComponentFixture<AddToCartButtonComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [AddToCartButtonComponent]
+  async function setup() {
+    const { fixture } = await render(AddToCartButtonComponent, {
     })
-    .compileComponents();
-    
-    fixture = TestBed.createComponent(AddToCartButtonComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    return {
+      fixture,
+    };
+  }
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create', async() => {
+    const { fixture } = await setup();
+
+    expect(fixture).toBeTruthy();
   });
 });

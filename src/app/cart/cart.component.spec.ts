@@ -1,23 +1,22 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { render } from '@testing-library/angular';
 import { CartComponent } from './cart.component';
+import { provideRouter } from '@angular/router';
 
 describe('CartComponent', () => {
-  let component: CartComponent;
-  let fixture: ComponentFixture<CartComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [CartComponent]
+  async function setup() {
+    const { fixture } = await render(CartComponent, {
+      providers: [
+        provideRouter([]),
+      ],
     })
-    .compileComponents();
-    
-    fixture = TestBed.createComponent(CartComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    return {
+      fixture,
+    };
+  }
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should create', async() => {
+    const { fixture } = await setup();
+
+    expect(fixture).toBeTruthy();
   });
 });
