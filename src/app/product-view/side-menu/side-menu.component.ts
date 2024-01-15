@@ -17,8 +17,4 @@ export class SideMenuComponent {
 
   readonly products = this.productService.filteredProducts;
   readonly ROUTE_TOKENS = ROUTE_TOKENS;
-
-  selectProduct(id: string) {
-    this.productService.selectedProductId.set(id);
-  }
 }
