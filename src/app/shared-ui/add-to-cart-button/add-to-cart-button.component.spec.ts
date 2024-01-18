@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/angular';
+import { render, screen, within } from '@testing-library/angular';
 import { AddToCartButtonComponent } from './add-to-cart-button.component';
 import { CartService } from '../../services/cart.service';
 import { signal } from '@angular/core';
@@ -19,7 +19,7 @@ describe('AddToCartButtonComponent', () => {
       decrementCartItem: jest.fn(),
     };
 
-    const user = userEvent.setup()
+    const user = userEvent.setup();
 
     const { fixture } = await render(AddToCartButtonComponent, {
       providers: [
