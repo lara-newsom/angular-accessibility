@@ -22,9 +22,9 @@
         </div>
       </div>
     } @else {
-      <div class="cart-items-wrapper">
+      <ul class="cart-items-wrapper">
         @for (item of cartService.cartItemsPlusQuantity(); track item.id){
-          <div class="cart-item">
+          <li class="cart-item">
             <div class="cart-item-image-wrapper">
               <img [src]="item.thumb" [alt]="item.title" />
             </div>
@@ -37,11 +37,11 @@
               numberOnly
             ></app-add-to-cart-button>
             <p class="cart-item-price">{{ (item.price * (item.quantity || 1)) | currency }}</p>
-          </div>
+          </li>
         } @empty {
           <p class="cart-item-name">Your pets must accessorize! Go add some accessories to your cart</p>
         }
-      </div>
+      </ul>
       <div class="totals-item">
         <h4 class="visually-hidden">Cart Total: {{ cartService.total() | currency }}</h4>
         <div class="totals-details-wrapper">
