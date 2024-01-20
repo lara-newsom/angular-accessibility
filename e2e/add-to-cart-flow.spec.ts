@@ -1,14 +1,17 @@
 import { test, expect } from '@playwright/test';
 
-test('navigates to product view and adds item to cart', async({ page }) => {
+test('navigates to product view and adds item to cart', async ({ page }) => {
   await page.goto('http://localhost:4200/');
 
   await expect(page).toHaveTitle(/Just Like People - Home/);
+
   await page.getByRole('link', { name: 'Products'}).click();
   await page.getByRole('link', { name: 'Animals in Glasses'}).click();
-
   await expect(page).toHaveTitle(/Just Like People - Products/);
-  const addButton = page.getByRole('button', { name: 'Add one to cart' }).filter({ hasText: '+'});
+
+  const addButton = page.getByRole('button', { name: 'Add one to cart'}).filter({
+    hasText: '+'
+  });
 
   // 0 in cart
   await addButton.click();
@@ -24,5 +27,6 @@ test('navigates to product view and adds item to cart', async({ page }) => {
   await expect(page).toHaveTitle(/Just Like People - Cart/);
 
   const addedItem = page.getByRole('listitem').filter({ hasText: /Dark Shades for Cool Cats/});
-  await addedItem.getByRole('button').filter({hasText: '3'});
+  const quantityButton = addedItem.getByRole('button').filter({ hasText: '2'});
+  await expect(quantityButton).toBeVisible();
 });
