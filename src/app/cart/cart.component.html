@@ -1,18 +1,13 @@
-<section
-  aria-label="Cart Checkout"
-  class="main-content"
+<app-two-panel-layout
+  ariaLabel="Cart Checkout"
+  ariaLiveSetting="assertive"
 >
-  <h2 class="visually-hidden">Cart Checkout</h2>
-  <div class="image-wrapper">
-    <img
-      src="../../assets/images/checkout.jpg"
-      alt=""
-    />
-  </div>
-  <div
-    class="cart-wrapper"
-    aria-live="assertive"
-  >
+  <img
+    left-wrapper
+    src="../../assets/images/checkout.jpg"
+    alt=""
+  />
+  <div right-wrapper>
     <h3 class="cart-header">Just Like People Shopping Cart</h3>
     @if(submitted && !loading) {
       <div class="totals-item">
@@ -23,13 +18,13 @@
           <div>Order# 1664</div>
         </div>
         <div class="totals-details-wrapper">
-          <button input="submit" (click)="returnToProducts()">Keep Shopping</button>
+          <button appJlpBorderButton input="submit" (click)="returnToProducts()">Keep Shopping</button>
         </div>
       </div>
     } @else {
-      <div class="cart-items-wrapper">
+      <ul class="cart-items-wrapper">
         @for (item of cartService.cartItemsPlusQuantity(); track item.id){
-          <div class="cart-item">
+          <li class="cart-item">
             <div class="cart-item-image-wrapper">
               <img [src]="item.thumb" [alt]="item.title" />
             </div>
@@ -37,21 +32,16 @@
               [attr.aria-label]="item.title + ' quantity in cart: ' + item.quantity "
               class="cart-item-name"
             >{{ item.title }}</h4>
-            <div class="quantity-selector-wrapper">
-              <div class="quantity-selector-wrapper">
-                <div class="quantity-selector">
-                  <button (click)="cartService.decrementCartItem(item.id)">-</button>
-                  <span>{{ item.quantity }}</span>
-                  <button (click)="cartService.addCartItem(item.id)">+</button>
-                </div>
-              </div>
-            </div>
+            <app-add-to-cart-button
+              [productId]="item.id"
+              numberOnly
+            ></app-add-to-cart-button>
             <p class="cart-item-price">{{ (item.price * (item.quantity || 1)) | currency }}</p>
-          </div>
+          </li>
         } @empty {
           <p class="cart-item-name">Your pets must accessorize! Go add some accessories to your cart</p>
         }
-      </div>
+      </ul>
       <div class="totals-item">
         <h4 class="visually-hidden">Cart Total: {{ cartService.total() | currency }}</h4>
         <div class="totals-details-wrapper">
@@ -72,9 +62,11 @@
         </div>
         <div class="totals-details-wrapper" aria-live="assertive">
           @if(loading) {
+            <mat-spinner aria-label="Order Checkout"></mat-spinner>
             <div>Processing...</div>
           } @else {
             <button
+              appJlpBorderButton
               input="submit"
               (click)="checkout()"
               [disabled]="cartService.subtotal() === 0"
@@ -84,4 +76,4 @@
       </div>
     }
   </div>
-</section>
+</app-two-panel-layout>

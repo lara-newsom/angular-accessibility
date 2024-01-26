@@ -11,15 +11,24 @@
         />
       </div>
       <div class="description">
-        <p>{{ selectedProduct().description }}</p>
-        <h4>Tags:
-          @for (tag of selectedProduct().tags; track $index) {
-            <span
-              class="tag"
-            >{{ tag }}</span>
-          }
+        <h4
+          [attr.aria-label]="'Product Tags: ' + selectedProduct().tags"
+        >
+          <p
+            aria-hidden="true"
+          >Tags:
+            @for (tag of selectedProduct().tags; track $index) {
+              <span
+                class="tag"
+              >{{ tag }}</span>
+            }
+          </p>
         </h4>
+        <p>{{ selectedProduct().description }}</p>
         <p class="price">Price: <span>{{ selectedProduct().price | currency }}</span></p>
+        <app-add-to-cart-button
+          [productId]="selectedProduct().id"
+        ></app-add-to-cart-button>
       </div>
     </div>
   </div>

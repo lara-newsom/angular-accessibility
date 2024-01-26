@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { ProductService } from '../../services/product.service';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ROUTE_TOKENS } from '../../models/route-tokens';
 
 @Component({
@@ -10,6 +10,7 @@ import { ROUTE_TOKENS } from '../../models/route-tokens';
   styleUrls: ['./side-menu.component.scss'],
   imports: [
     RouterLink,
+    RouterLinkActive,
   ]
 })
 export class SideMenuComponent {

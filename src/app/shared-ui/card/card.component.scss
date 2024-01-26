@@ -1,7 +1,7 @@
 div.product {
-  background-color: rgba(232, 249, 253, 1);
+  background-color: var(--background-light-blue);
   border: none;
-  color: black;
+  color: var(--font-color);
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -12,13 +12,13 @@ div.product {
   max-width: 400px;
   min-width: 250px;
   margin-bottom: 20px;
-  border-radius: .6rem;
+  border-radius: var(--border-radius);
   .card-image {
     object-fit: cover;
-    background-color: rgba(153, 191, 251, 1);
-    border-radius: 0.6rem 0.6rem 0 0;
+    background-color: var(--background-medium-blue);
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
     img{
-      border-radius: 0.6rem 0.6rem 0 0;
+      border-radius: var(--border-radius) var(--border-radius) 0 0;
       width: 100%;
     }
   }
@@ -27,26 +27,25 @@ div.product {
 .featured-product-title {
   flex-grow: 1;
   width: 100%;
-  max-width: 400px;
+  max-width: 380px;
   text-align: center;
-  background-color: rgba(153, 191, 251, 1);
-  border: none;
-  color: black;
-  padding-top: 10px;
-  border-radius: 0 0 .6rem .6rem;
-  a{
+  background-color: var(--background-medium-blue);
+  color: var(--font-color);
+  padding: 10px;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  a {
     h3 {
-      font-size: 1.4rem;
-      font-weight: 600;
+      font-size: var(--highlighted-text);
+      font-weight: var(--semi-bold-text);
       &:hover,
       &:focus {
-        text-shadow: 0 0 2px white;
-        color: black;
+        text-shadow: 0 0 2px var(--white);
+        color: var(--black);
       }
     }
   }
   p {
     width: 100%;
-    font-size: 1.4rem;
+    font-size: var(--highlighted-text);
   }
 }

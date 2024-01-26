@@ -7,6 +7,10 @@ import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { ROUTE_TOKENS } from '../models/route-tokens';
 import { CartService } from '../services/cart.service';
+import { AddToCartButtonComponent } from '../shared-ui/add-to-cart-button/add-to-cart-button.component';
+import { JlpBorderButtonDirective } from '../shared-ui/jlp-border-button.directive';
+import { TwoPanelLayoutComponent } from '../shared-ui/two-panel-layout/two-panel-layout.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-cart',
@@ -16,6 +20,10 @@ import { CartService } from '../services/cart.service';
     CurrencyPipe,
     FormsModule,
     RouterLink,
+    AddToCartButtonComponent,
+    JlpBorderButtonDirective,
+    TwoPanelLayoutComponent,
+    MatProgressSpinnerModule,
   ],
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']

@@ -1,12 +1,6 @@
 
 .side-nav {
   box-sizing: border-box;
-  // delete the styles between these comments for step one
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  max-height: 620px;
-  // delete above
   ul {
     display: flex;
     flex-wrap: wrap;
@@ -26,7 +20,7 @@
   border: none;
   padding: 0;
   text-align: center;
-  background-color: rgba(232, 249, 253, 1);
+  background-color: var(--background-light-blue);
 }
 
 .image-button img {
@@ -37,13 +31,12 @@
 }
 
 .image-button img:hover {
-  filter: drop-shadow(0 0 0.5rem rgb(33, 18, 16));
+  filter: drop-shadow(0 0 8px var(--drop-shadow));
 }
 
 .router-link-active img {
   width: 94%;
   height: 94%;
-  border: solid 3px white;
-  filter: drop-shadow(0 0 0.5rem rgb(33, 18, 16));
+  border: solid var(--border-width) var(--white);
+  filter: drop-shadow(0 0 8px var(--drop-shadow));
 }
-

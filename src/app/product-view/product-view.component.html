@@ -1,10 +1,14 @@
-<section class="main-content">
+<section
+  aria-label="Products"
+  class="main-content"
+>
+  <h2 class="visually-hidden">Products for {{ productService.selectedCategory() }} Category</h2>
   <div class="category-wrapper">
     <div class="side-nav-wrapper">
       <app-side-menu></app-side-menu>
     </div>
     <div class="horizontal-divider"></div>
-    <div class="detail-wrapper">
+    <div id="productDetail" class="detail-wrapper" tabindex="-1">
       <router-outlet/>
     </div>
   </div>

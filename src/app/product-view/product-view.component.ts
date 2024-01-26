@@ -1,7 +1,9 @@
 import { Component, Input, inject } from '@angular/core';
 import { ProductService } from '../services/product.service';
 import { SideMenuComponent } from './side-menu/side-menu.component';
-import { RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { filter } from 'rxjs/operators';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   standalone: true,
@@ -18,7 +20,22 @@ export class ProductViewComponent{
     this.productService.selectedCategory.set(val);
   }
 
-  private readonly productService = inject(ProductService);
+  protected readonly productService = inject(ProductService);
+
+  constructor(
+    private readonly router: Router
+  ) {
+    this.router.events.pipe(
+      filter((event) => event instanceof NavigationEnd),
+      takeUntilDestroyed()
+    ).subscribe(() => {
+        const content = document.querySelector<HTMLElement>('#productDetail');
+        if(content){
+          content.focus();
+        }
+      }
+    )
+  }
 }
 
 

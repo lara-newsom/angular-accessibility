@@ -1,11 +1,13 @@
-<section class="main-content">
-  <div class="image-wrapper">
-    <img
-      src="../../assets/images/contact.jpg"
-      alt="couple of kids in animal costumes"
-    />
-  </div>
-  <div class="contact-wrapper">
+<app-two-panel-layout
+  ariaLabel="Contact Us Form"
+  ariaLiveSetting="assertive"
+>
+  <img
+    left-wrapper
+    src="../../assets/images/contact.jpg"
+    alt=""
+  />
+  <div right-wrapper>
     @if(!submitted) {
     <div class="form-wrapper">
       <h3>We'd Love to Hear from You</h3>
@@ -69,6 +71,7 @@
           </div>
 
           <button
+            appJlpBorderButton
             [disabled]="contactForm.invalid"
             type="submit"
             name="submit"
@@ -83,12 +86,13 @@
     <div class="form-wrapper">
       <h3>Thank You for Your Message</h3>
       <p>It may take up to 24 hours for someone to respond.</p>
-      <button (click)="clearForm()">Send Another</button>
+      <button appJlpBorderButton (click)="clearForm()">Send Another</button>
     </div>
     } @else {
     <div class="form-wrapper-spinner">
+      <mat-spinner aria-label="Email Sending"></mat-spinner>
       <h3>Your message is being sent...</h3>
     </div>
     }
   </div>
-</section>
+</app-two-panel-layout>

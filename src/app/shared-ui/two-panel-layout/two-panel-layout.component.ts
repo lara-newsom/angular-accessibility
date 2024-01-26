@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-two-panel-layout',
@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './two-panel-layout.component.scss'
 })
 export class TwoPanelLayoutComponent {
-
+  @Input({required: true}) ariaLabel!: string;
+  @Input() ariaLiveSetting: 'assertive' | 'polite' | 'off' = 'off';
 }
